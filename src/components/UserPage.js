@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 
 // 사용자 정보 받아오기 및 경고창으로 확인
-const UserPage = ({ history }) => {
+const UserPage = () => {
     const [name, setName] = useState('')
     const [gender, setGender] = useState('')
     const handleSubmit = (e) => {
@@ -59,7 +60,7 @@ const UserPage = ({ history }) => {
                     { 
                         (name.length === 0) || (gender.length === 0) ?
                         <button type="submit" disabled>검사 시작</button> :
-                        <button type="submit">검사 시작</button>
+                        <Link to="/TestExPage"><button type="submit">검사 시작</button></Link>
                     }
                 </div>
             </form>
