@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// 사용자 정보 받아오기 및 경고창으로 확인
 const UserPage = ({ history }) => {
     const [name, setName] = useState('')
     const [gender, setGender] = useState('')
@@ -10,8 +11,10 @@ const UserPage = ({ history }) => {
     
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <div>직업가치관검사</div>
+            <div>직업가치관검사</div>
+
+                {/* 사용자 이름, 성별 입력 form  */}
+                <form onSubmit={handleSubmit}>
                 <div>
                     <p>이름</p>
                     <input 
@@ -50,8 +53,14 @@ const UserPage = ({ history }) => {
                     />
                     <label for="female">여자</label>
                 </div>
+
+                {/* 이름, 성별 둘 중 하나라도 입력하지 않으면 버튼 비활성화 */}
                 <div>
-                    <button type="submit">검사 시작</button>
+                    { 
+                        (name.length === 0) || (gender.length === 0) ?
+                        <button type="submit" disabled>검사 시작</button> :
+                        <button type="submit">검사 시작</button>
+                    }
                 </div>
             </form>
         </div>
