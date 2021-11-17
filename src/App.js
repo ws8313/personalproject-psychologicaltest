@@ -5,11 +5,13 @@ import './App.css';
 import UserPage from './components/UserPage';
 import TestExPage from './components/TestExPage';
 
+
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/UserPage" component={ UserPage } />
+        <Route exact path="/" component={UserPage} />
+        <Route path="/TestExPage" component={TestExPage} />
       </Switch>
     </div>
   );
