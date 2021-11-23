@@ -1,14 +1,19 @@
-import React, { useState } from "react";
-import {  } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useContext } from "react/cjs/react.development";
+import { UserContext } from "./UserStore";
 
 // 사용자 정보 받아오기 및 경고창으로 확인
 const UserPage = ({ history }) => {
     const [name, setName] = useState('')
     const [gender, setGender] = useState('')
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        alert(name + gender);
-    }
+
+    const context = useContext(UserContext);
+
+    useEffect(() => {
+        context.name = name;
+        context.gender = gender;
+        console.log(context)
+    }, [name, gender]);
     
     return (
         <div>
@@ -16,17 +21,19 @@ const UserPage = ({ history }) => {
 
                 {/* 사용자 이름, 성별 입력 form  */}
                 {/* 11.21 수정 내용 이름 input 자동완성기능 off */}
-                <form onSubmit={handleSubmit}>
+                <form>
                 <div>
                     <p>이름</p>
                     <input 
                         type="text" 
                         id="name"
+                        placeholder="이름을 입력하세요"
                         autoComplete='off'
                         value={name} 
                         onChange={
                             (event) => {
                                 setName(event.target.value);
+                                console.log(name);
                             }
                         }
                     />
@@ -35,10 +42,11 @@ const UserPage = ({ history }) => {
                         type="radio" 
                         id="male" 
                         name="gender" 
-                        value="male"
+                        value="100323"
                         onChange={
                             (event) => {
-                                setGender(event.target.id);
+                                setGender(event.target.value);
+
                             }
                         }
                     />
@@ -47,10 +55,10 @@ const UserPage = ({ history }) => {
                         type="radio" 
                         id="female" 
                         name="gender" 
-                        value="female"
+                        value="100324"
                         onChange={
                             (event) => {
-                                setGender(event.target.id);
+                                setGender(event.target.value);
                             }
                         }
                     />
@@ -62,7 +70,7 @@ const UserPage = ({ history }) => {
                     { 
                         (name.length === 0) || (gender.length === 0) ?
                         <button type="submit" disabled>검사시작</button> :
-                        <button type="submit" onClick={ (event) => { history.push("TestExPage") }}>검사시작</button>
+                        <button type="submit" onClick={ () => { history.push("/TestExPage") }}>검사시작</button>
                     }
                 </div>
             </form>

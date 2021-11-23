@@ -3,10 +3,12 @@ import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
 
-import UserPage from './components/UserPage';
 import UserStore from './components/UserStore';
+
+import UserPage from './components/UserPage';
 import TestExPage from './components/TestExPage';
 import TestPage from './components/TestPage';
+import ResultPage from './components/ResultPage';
 
 
 
@@ -18,6 +20,7 @@ function App() {
           <Route exact path="/" component={UserPage} />
           <Route path="/TestExPage" component={TestExPage} />
           <Route path="/TestPage" component={TestPage} />
+          <Route path="/ResultPage" component={ResultPage} />
         </Switch>
       </UserStore>
     </div>

@@ -52,7 +52,7 @@ const TestExPage = ({ history }) => {
                 <div>
                     {
                         (answer === '1') || (answer === '2') ?
-                        <button type="submit" onClick={ (event) => { history.push("TestPage/0") }}>검사시작</button>
+                        <button type="submit" onClick={ (event) => { history.push("/TestPage/0") }}>검사시작</button>
                         :
                         <button type="submit" disabled>검사시작</button>
                     }
