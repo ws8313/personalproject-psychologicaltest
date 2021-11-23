@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
+import {  } from 'react-router-dom';
 
 // 사용자 정보 받아오기 및 경고창으로 확인
 const UserPage = ({ history }) => {
@@ -15,12 +15,14 @@ const UserPage = ({ history }) => {
             <div>직업가치관검사</div>
 
                 {/* 사용자 이름, 성별 입력 form  */}
+                {/* 11.21 수정 내용 이름 input 자동완성기능 off */}
                 <form onSubmit={handleSubmit}>
                 <div>
                     <p>이름</p>
                     <input 
                         type="text" 
-                        id="name" 
+                        id="name"
+                        autoComplete='off'
                         value={name} 
                         onChange={
                             (event) => {
@@ -60,7 +62,7 @@ const UserPage = ({ history }) => {
                     { 
                         (name.length === 0) || (gender.length === 0) ?
                         <button type="submit" disabled>검사시작</button> :
-                        <Link to="/TestExPage"><button type="submit" onClick={ (event) => { history.push("TestExPage") }}>검사시작</button></Link>
+                        <button type="submit" onClick={ (event) => { history.push("TestExPage") }}>검사시작</button>
                     }
                 </div>
             </form>

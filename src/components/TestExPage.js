@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 
 
-
 const TestExPage = ({ history }) => {
-
     const [answer, setAnswer] = useState('');
-    const ChangeHandler = (e) => {
-        e.preventDefault();
-    }
-    
+
     return (
         <div>
             
@@ -26,7 +21,7 @@ const TestExPage = ({ history }) => {
                 가치의 뜻을 잘모르겠다면 문항 아래에 있는 가치의 설명을 확인해보세요.
             </div>
 
-            <form onChange={ChangeHandler}>
+            <form>
                 <div>
                     <input
                         type="radio"
@@ -57,7 +52,7 @@ const TestExPage = ({ history }) => {
                 <div>
                     {
                         (answer === '1') || (answer === '2') ?
-                        <button type="submit">검사시작</button>
+                        <button type="submit" onClick={ (event) => { history.push("TestPage/0") }}>검사시작</button>
                         :
                         <button type="submit" disabled>검사시작</button>
                     }
