@@ -6,7 +6,6 @@ import axios from "axios";
 const TestPage = ({ history }) => {
     const [questions, setQuestions] = useState([]);
     const [curPage, setCurPage] = useState(0);
-
     const [input, setInput] = useState([]);
 
     // context 사용
@@ -58,7 +57,7 @@ const TestPage = ({ history }) => {
         const btnShow = [];
         if(qlist && qlist.length > 0) {
             btnShow.push(
-            ((curPage+1)*5) <= (Object.keys(input).length) || (Object.keys(input).length) === 28 ?
+            ((curPage+1)*5) <= ((Object.keys(input).length)-1) || ((Object.keys(input).length)-1) === 28 ?
                 <button onClick={nextClick}>다음</button> :
                 <button onClick={nextClick} disabled>다음</button>
             )}
@@ -82,29 +81,28 @@ const TestPage = ({ history }) => {
         // radio type의 input checked 기능 사용하기 위해 localStorage 사용
         localStorage.setItem(name, value)
 
-        setInput((x) => {
-            let inputList = {...x}
-            inputList[name] = value
-            return inputList
+
+        const inputList = [...input]
+        for (let i = 0; i <= localStorage.length; i++) {
+            inputList[i] = localStorage.getItem(i);
+            setInput(inputList);
+        }
         })
-    })
 
-
-    // undefined 오류 방지를 위해 if (Object.keys(input).length === questions.length) 입력했는데 answer에 값이 안들어가서 지우니까 정상 작동함 확인 필요
     useEffect(() => {
-        const ansList = []
-            for (let i of Object.entries(input)) {
-                ansList.push(i.join("="))
-                console.log(ansList)
-                context.answers = ansList.join(" ")
-            }
-    }, [input, questions])
-    console.log(context)
+        const ansList = [];
+        for (let i = 1; i <= input.length - 1; i++) {
+            ansList.push("B" + String(i) + "=" + input[i]);
+        }
+        const ansListResult = ansList.join(" ");
+        context.answers = ansListResult;
+        console.log(context)
+    }, [input])
 
     // checked 버튼 disable 구현 중 확인 필요
     if(qlist && qlist.length > 0) {
         console.log((curPage+1)*5)
-        console.log(Object.keys(input).length)
+        console.log((Object.keys(input).length)-1)
     }
 
     // questions 질문지 받아오기 콘솔 출력
@@ -127,10 +125,10 @@ const TestPage = ({ history }) => {
                                     <input 
                                         type="radio" 
                                         id="check"
-                                        name={"B"+qlist[curPage][curQuestions].qitemNo} 
+                                        name={qlist[curPage][curQuestions].qitemNo} 
                                         value={qlist[curPage][curQuestions].answerScore01} 
                                         onChange={changeHandler}
-                                        checked={localStorage.getItem("B"+qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore01 ? true : false}  
+                                        checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore01 ? true : false}  
                                     />
                                     <div>{qlist[curPage][curQuestions].answer03}</div>
                                     <div>{qlist[curPage][curQuestions].answer01}</div>
@@ -138,10 +136,10 @@ const TestPage = ({ history }) => {
                                     <input 
                                         type="radio" 
                                         id="check"
-                                        name={"B"+qlist[curPage][curQuestions].qitemNo} 
+                                        name={qlist[curPage][curQuestions].qitemNo} 
                                         value={qlist[curPage][curQuestions].answerScore02} 
                                         onChange={changeHandler}
-                                        checked={localStorage.getItem("B"+qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore02 ? true : false}
+                                        checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore02 ? true : false}
                                     />
                                     <div>{qlist[curPage][curQuestions].answer04}</div>
                                     <div>{qlist[curPage][curQuestions].answer02}</div>
@@ -161,10 +159,10 @@ const TestPage = ({ history }) => {
                                 <input 
                                     type="radio" 
                                     id="check"
-                                    name={"B"+qlist[curPage][curQuestions].qitemNo} 
+                                    name={qlist[curPage][curQuestions].qitemNo} 
                                     value={qlist[curPage][curQuestions].answerScore01} 
                                     onChange={changeHandler}
-                                    checked={localStorage.getItem("B"+qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore01 ? true : false}
+                                    checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore01 ? true : false}
                                 />
                                 <div>{qlist[curPage][curQuestions].answer03}</div>
                                 <div>{qlist[curPage][curQuestions].answer01}</div>
@@ -172,10 +170,10 @@ const TestPage = ({ history }) => {
                                 <input 
                                     type="radio" 
                                     id="check"
-                                    name={"B"+qlist[curPage][curQuestions].qitemNo}  
+                                    name={qlist[curPage][curQuestions].qitemNo}  
                                     value={qlist[curPage][curQuestions].answerScore02} 
                                     onChange={changeHandler}
-                                    checked={localStorage.getItem("B"+qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore02 ? true : false}
+                                    checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore02 ? true : false}
                                 />
                                 <div>{qlist[curPage][curQuestions].answer04}</div>
                                 <div>{qlist[curPage][curQuestions].answer02}</div>
