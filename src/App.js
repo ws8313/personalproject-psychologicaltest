@@ -9,6 +9,7 @@ import UserPage from './components/UserPage';
 import TestExPage from './components/TestExPage';
 import TestPage from './components/TestPage';
 import ResultPage from './components/ResultPage';
+import TestEndPage from './components/TestEndPage';
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/" component={UserPage} />
           <Route path="/TestExPage" component={TestExPage} />
           <Route path="/TestPage" component={TestPage} />
+          <Route path="/TestEndPage" component={TestEndPage} />
           <Route path="/ResultPage" component={ResultPage} />
         </Switch>
       </UserStore>

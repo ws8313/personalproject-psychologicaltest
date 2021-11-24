@@ -18,7 +18,7 @@ const TestPage = ({ history }) => {
     // 다음 버튼 클릭 함수 구현 필요
     const nextClick = (e) => {
         if(curPage === 5) {
-            history.push("/ResultPage")
+            history.push("/TestEndPage")
         } else if (curPage === 0) {
             history.push(""+(curPage+1))
             setCurPage(curPage + 1)

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useContext } from "react/cjs/react.development";
+import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "./UserStore";
 
 // 사용자 정보 받아오기 및 경고창으로 확인
