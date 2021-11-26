@@ -59,8 +59,8 @@ const TestPage = ({ history }) => {
         if(qlist && qlist.length > 0) {
             btnShow.push(
             ((curPage+1)*5) <= ((Object.keys(input).length)-1) || ((Object.keys(input).length)-1) === 28 ?
-                <button onClick={nextClick}>다음</button> :
-                <button onClick={nextClick} disabled>다음</button>
+                <button id="btn" class="btn btn-primary" onClick={nextClick}>다음</button> :
+                <button id="btn" class="btn btn-primary disabled" onClick={nextClick} disabled>다음</button>
             )}
         return btnShow;
     }
@@ -123,32 +123,36 @@ const TestPage = ({ history }) => {
                 for (let curQuestions=0; curQuestions<3; curQuestions++) {
                         print5qlist.push(
                             <div key={qlist[curPage][curQuestions].qitemNo}>
-                                <div>
+                                <div id="qlist">
                                     {qlist[curPage][curQuestions].question}
                                 </div>
 
                                 <form>
-                                    <input 
-                                        type="radio" 
-                                        id="check"
-                                        name={qlist[curPage][curQuestions].qitemNo} 
-                                        value={qlist[curPage][curQuestions].answerScore01} 
-                                        onChange={changeHandler}
-                                        checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore01 ? true : false}  
-                                    />
-                                    <div>{qlist[curPage][curQuestions].answer03}</div>
-                                    <div>{qlist[curPage][curQuestions].answer01}</div>
+                                    <label>
+                                        <p id="qlistp">{qlist[curPage][curQuestions].answer03}</p>
+                                        <p id="qlistp">{qlist[curPage][curQuestions].answer01}</p>
+                                        <input 
+                                            type="radio" 
+                                            id="check"
+                                            name={qlist[curPage][curQuestions].qitemNo} 
+                                            value={qlist[curPage][curQuestions].answerScore01} 
+                                            onChange={changeHandler}
+                                            checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore01 ? true : false}  
+                                        />
+                                    </label>
 
-                                    <input 
-                                        type="radio" 
-                                        id="check"
-                                        name={qlist[curPage][curQuestions].qitemNo} 
-                                        value={qlist[curPage][curQuestions].answerScore02} 
-                                        onChange={changeHandler}
-                                        checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore02 ? true : false}
-                                    />
-                                    <div>{qlist[curPage][curQuestions].answer04}</div>
-                                    <div>{qlist[curPage][curQuestions].answer02}</div>
+                                    <label>
+                                        <p id="qlistp">{qlist[curPage][curQuestions].answer04}</p>
+                                        <p id="qlistp">{qlist[curPage][curQuestions].answer02}</p>
+                                        <input 
+                                            type="radio" 
+                                            id="check"
+                                            name={qlist[curPage][curQuestions].qitemNo} 
+                                            value={qlist[curPage][curQuestions].answerScore02} 
+                                            onChange={changeHandler}
+                                            checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore02 ? true : false}
+                                        />
+                                    </label>
                                 </form>
                             </div>
                         )}
@@ -157,32 +161,36 @@ const TestPage = ({ history }) => {
                 if(qlist && qlist.length > 0) {
                     print5qlist.push(
                         <div key={qlist[curPage][curQuestions].qitemNo}>
-                            <div>
+                            <div id="qlist">
                                 {qlist[curPage][curQuestions].question}
                             </div>
 
                             <form>
-                                <input 
-                                    type="radio" 
-                                    id="check"
-                                    name={qlist[curPage][curQuestions].qitemNo} 
-                                    value={qlist[curPage][curQuestions].answerScore01} 
-                                    onChange={changeHandler}
-                                    checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore01 ? true : false}
-                                />
-                                <div>{qlist[curPage][curQuestions].answer03}</div>
-                                <div>{qlist[curPage][curQuestions].answer01}</div>
+                                <label>
+                                    <p id="qlistp">{qlist[curPage][curQuestions].answer03}</p>
+                                    <p id="qlistp">{qlist[curPage][curQuestions].answer01}</p>
+                                    <input 
+                                        type="radio" 
+                                        id="check"
+                                        name={qlist[curPage][curQuestions].qitemNo} 
+                                        value={qlist[curPage][curQuestions].answerScore01} 
+                                        onChange={changeHandler}
+                                        checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore01 ? true : false}
+                                    />
+                                </label>
 
-                                <input 
-                                    type="radio" 
-                                    id="check"
-                                    name={qlist[curPage][curQuestions].qitemNo}  
-                                    value={qlist[curPage][curQuestions].answerScore02} 
-                                    onChange={changeHandler}
-                                    checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore02 ? true : false}
-                                />
-                                <div>{qlist[curPage][curQuestions].answer04}</div>
-                                <div>{qlist[curPage][curQuestions].answer02}</div>
+                                <label>
+                                    <p id="qlistp">{qlist[curPage][curQuestions].answer04}</p>
+                                    <p id="qlistp">{qlist[curPage][curQuestions].answer02}</p>
+                                    <input 
+                                        type="radio" 
+                                        id="check"
+                                        name={qlist[curPage][curQuestions].qitemNo}  
+                                        value={qlist[curPage][curQuestions].answerScore02} 
+                                        onChange={changeHandler}
+                                        checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore02 ? true : false}
+                                    />
+                                </label>
                             </form>
                         </div>
                 )
@@ -197,11 +205,11 @@ const TestPage = ({ history }) => {
     return (
         <div>
             <div>
-                <div>검사진행</div>
+                <h1 id="h1">검사진행</h1>
             </div>
 
             <div>
-                <div>{progress()}%</div>
+                <div id="per">{progress()}%</div>
             </div>
 
             <div>
@@ -213,11 +221,13 @@ const TestPage = ({ history }) => {
                 {printqlist()}
             </div>
 
-            <div>
-                <button onClick={prevClick}>이전</button>
-            </div>
-            <div>
-                {btnDisabled()}
+            <div id="btnbox">
+                <div>
+                    <button id="btn" class="btn btn-primary" onClick={prevClick}>이전</button>
+                </div>
+                <div>
+                    {btnDisabled()}
+                </div>
             </div>
         </div>
     )

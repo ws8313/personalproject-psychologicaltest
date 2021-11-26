@@ -118,10 +118,12 @@ const ResultPage = ({ history }) => {
                     <h4>종사자 평균 학력별</h4>
                 </div>
                 <table>
-                    <tr>
-                        <th>분야</th>
-                        <th>직업</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>분야</th>
+                            <th>직업</th>
+                        </tr>
+                    </thead>
                     <tr>
                         <td>고졸</td>
                         <td>{high}</td>
@@ -191,6 +193,7 @@ const ResultPage = ({ history }) => {
                             <th>분야</th>
                             <th>직업</th>
                         </tr>
+                    </thead>
                         <tr>
                             <td>계열무관</td>
                             <td>{major1}</td>
@@ -223,7 +226,6 @@ const ResultPage = ({ history }) => {
                             <td>예체능</td>
                             <td>{major8}</td>
                         </tr>
-                    </thead>
                 </table>
             </div>
         )
@@ -248,6 +250,9 @@ const ResultPage = ({ history }) => {
                         data: getScoreValue,
                     }
                 ]
+            },
+            options: {
+                maintainAspectRatio : false
             }
         })
         if (Array.isArray(getScoreValue) && getScoreValue.length === 0)barChart.destroy();
@@ -257,10 +262,10 @@ const ResultPage = ({ history }) => {
     return (
         <div>
             <div>
-                <h2>직업가치관검사 결과표</h2>
+                <h1 id="h1">직업가치관검사 결과표</h1>
             </div>
 
-            <div>
+            <div id="resultq">
                 직업가치관이란 직업을 선택할 때 영향을 끼치는 자신만의 믿음과
                 신념입니다. 따라서 여러분의 직업생활과 관련하여 포기하지 않는 무게중심의
                 역할을 한다고 볼 수 있습니다. 직업가치관검사는 여러분이 직업을 선택할 때
@@ -271,7 +276,6 @@ const ResultPage = ({ history }) => {
 
             {/* 검사일 확인 */}
             { resultData && Object.keys(resultData).length > 0 ?
-            <div>
                 <table>
                     <thead>
                         <tr>
@@ -288,7 +292,6 @@ const ResultPage = ({ history }) => {
                         </tr>
                     </tbody>
                 </table>
-            </div>
             : undefined }
 
             <div>
@@ -296,7 +299,7 @@ const ResultPage = ({ history }) => {
             </div>
 
             <div>
-                <canvas id="barChart"></canvas>
+                <canvas id="barChart" height="500"></canvas>
             </div>
 
             <div>
@@ -309,8 +312,8 @@ const ResultPage = ({ history }) => {
                 </div>
             </div>
 
-            <div>
-                <button onClick={() => {
+            <div id="btnbox">
+                <button id="resultbtn" class="btn btn-primary" onClick={() => {
                     history.push("/")
                 }}>다시검사하기</button>
             </div>

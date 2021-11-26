@@ -16,14 +16,14 @@ const UserPage = ({ history }) => {
     }, [name, gender]);
     
     return (
-        <div>
-            <div>직업가치관검사</div>
+        <div id="inputform">
+            <h1 id="h1">직업가치관검사</h1>
 
                 {/* 사용자 이름, 성별 입력 form  */}
                 {/* 11.21 수정 내용 이름 input 자동완성기능 off */}
                 <form>
                 <div>
-                    <p>이름</p>
+                    <p id="p">이름</p>
                     <input 
                         type="text" 
                         id="name"
@@ -37,8 +37,8 @@ const UserPage = ({ history }) => {
                             }
                         }
                     />
-                    <p>성별</p>
-                    <input 
+                    <p id="p">성별</p>
+                    <label id="userlabel" for="male"><input 
                         type="radio" 
                         id="male" 
                         name="gender" 
@@ -49,9 +49,8 @@ const UserPage = ({ history }) => {
 
                             }
                         }
-                    />
-                    <label for="male">남자</label>
-                    <input 
+                    />남자</label>
+                    <label id="userlabel" for="female"><input 
                         type="radio" 
                         id="female" 
                         name="gender" 
@@ -61,16 +60,15 @@ const UserPage = ({ history }) => {
                                 setGender(event.target.value);
                             }
                         }
-                    />
-                    <label for="female">여자</label>
+                    />여자</label>
                 </div>
 
                 {/* 이름, 성별 둘 중 하나라도 입력하지 않으면 버튼 비활성화 */}
-                <div>
+                <div id="button">
                     { 
                         (name.length === 0) || (gender.length === 0) ?
-                        <button type="submit" disabled>검사시작</button> :
-                        <button type="submit" onClick={ () => { history.push("/TestExPage") }}>검사시작</button>
+                        <button type="submit" class="btn btn-primary disabled" disabled>검사시작</button> :
+                        <button type="submit" class="btn btn-primary" onClick={ () => { history.push("/TestExPage") }}>검사시작</button>
                     }
                 </div>
             </form>

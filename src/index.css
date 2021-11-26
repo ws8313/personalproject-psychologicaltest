@@ -1,13 +1,210 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#inputform {
+  border: solid 2px rgb(7, 14, 21);
+  border-radius: 50px;
+  width: 400px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: auto;
+}
+
+#h1 {
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+#p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+#name {
+  text-align: center;
+  width: 210px;
+  height: 50px;
+  border: black solid 2px;
+  border-radius: 25px;
+}
+
+#male, #female {
+  margin-right: 10px;
+}
+
+button {
+  margin-top: 30px;
+}
+
+#userlabel {
+  width: 100px;
+  height: 40px;
+  border: solid 2px black;
+  border-radius: 20px;
+  font-size: 17px;
+  font-weight: bold;
+
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 30px;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#per {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+#q {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border: black solid 2px;
+  border-radius: 40px;
+  width: 1020px;
+  height: 80px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#qlist {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  border: black solid 2px;
+  border-radius: 40px;
+  width: 1020px;
+  height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label {
+  width: 500px;
+  height: 100px;
+  border: solid 2px black;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: bold;
+
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+#exlabel {
+  width: 130px;
+  height: 40px;
+  border: solid 2px black;
+  border-radius: 20px;
+  font-size: 17px;
+  font-weight: bold;
+
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#btnbox {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  flex-direction: row;
+  transform: translateX(-50%);
+}
+#btn {
+  width: 100px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#resultbtn {
+  width: 150px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#qlistp {
+  margin-top: 5px;
+  margin-bottom: 1px;
+}
+
+#resultq {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 17px;
+  font-weight: bold;
+  border: black solid 2px;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+table thead {
+  font-size: 17px;
+  font-weight: bold;
+  border: solid 1px black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+table td {
+  border: solid 1px black;
+  font-size: 17px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+table th {
+  border: solid 1px black;
+  font-size: 17px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+h4 {
+  margin-top: 20px;
 }
