@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 
 const TestExPage = ({ history }) => {
@@ -10,9 +11,13 @@ const TestExPage = ({ history }) => {
             <div>
                 <div>검사예시</div>
             </div>
-            {/* Progress bar 구현 필요 */}
+
             <div>
-                <div></div>
+                <div>0%</div>
+            </div>
+
+            <div>
+                <ProgressBar animated now={50} />
             </div>
 
             <div>
@@ -23,8 +28,10 @@ const TestExPage = ({ history }) => {
 
             <form>
                 <div>
+                    <label for="answer1">
                     <input
                         type="radio"
+                        id="answer1"
                         name="answer"
                         value="1"
                         onChange={
@@ -33,8 +40,12 @@ const TestExPage = ({ history }) => {
                             }
                         }
                     /> 능력발휘
+                    </label>
+
+                    <label for="answer2">
                     <input
                         type="radio"
+                        id="answer2"
                         name="answer"
                         value="2"
                         onChange={
@@ -43,6 +54,7 @@ const TestExPage = ({ history }) => {
                             }
                         }
                     /> 자율성
+                    </label>
                 </div>
 
                 <div>

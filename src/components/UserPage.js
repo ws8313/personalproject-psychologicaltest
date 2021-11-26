@@ -7,6 +7,7 @@ const UserPage = ({ history }) => {
     const [gender, setGender] = useState('')
 
     const context = useContext(UserContext);
+    localStorage.clear();
 
     useEffect(() => {
         context.name = name;

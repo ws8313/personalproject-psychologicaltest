@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "./UserStore";
 import axios from "axios";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 
 const TestPage = ({ history }) => {
@@ -110,6 +111,11 @@ const TestPage = ({ history }) => {
         console.log(questions)
     }
 
+    function progress() {
+        const getProgress = Math.round((localStorage.length * 100) / 28)
+        return getProgress;
+    }
+
     // 화면에 문항 출력
     const printqlist = () => {
         const print5qlist = [];
@@ -190,6 +196,19 @@ const TestPage = ({ history }) => {
 
     return (
         <div>
+            <div>
+                <div>검사진행</div>
+            </div>
+
+            <div>
+                <div>{progress()}%</div>
+            </div>
+
+            <div>
+                <ProgressBar animated now={progress()} />
+            </div>
+
+
             <div>
                 {printqlist()}
             </div>
