@@ -33,7 +33,7 @@
   text-align: center;
   width: 210px;
   height: 50px;
-  border: black solid 2px;
+  border: black solid 1px;
   border-radius: 25px;
 }
 
@@ -48,7 +48,7 @@ button {
 #userlabel {
   width: 100px;
   height: 40px;
-  border: solid 2px black;
+  border: solid 1px black;
   border-radius: 20px;
   font-size: 17px;
   font-weight: bold;
@@ -195,6 +195,7 @@ table td {
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
+  width: 100px;
 }
 
 table th {
@@ -205,6 +206,10 @@ table th {
   padding-bottom: 5px;
 }
 
-h4 {
+#resulth4 {
+  margin-top: 20px;
+}
+
+#resulth3 {
   margin-top: 20px;
 }

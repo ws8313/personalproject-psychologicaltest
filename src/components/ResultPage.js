@@ -115,7 +115,7 @@ const ResultPage = ({ history }) => {
         return (
             <div>
                 <div>
-                    <h4>종사자 평균 학력별</h4>
+                    <h4 id="resulth4">종사자 평균 학력별</h4>
                 </div>
                 <table>
                     <thead>
@@ -185,7 +185,7 @@ const ResultPage = ({ history }) => {
         return (
             <div>
                 <div>
-                    <h4>종사자 평균 전공별</h4>
+                    <h4 id="resulth4">종사자 평균 전공별</h4>
                 </div>
                 <table>
                     <thead>
@@ -242,11 +242,11 @@ const ResultPage = ({ history }) => {
                     labels: ["능력발휘", "자율성", "보수", "안정성", "사회적 인정", "사회봉사", "자기계발", "창의성"],
                     datasets: [{
                         label: "직업가치관 결과",
-                        backgroundColor: "rgba(255,99,132,0.2)",
-                        borderColor: "rgba(255,99,132,1)",
+                        backgroundColor: "rgba(120,194,173,0.2)",
+                        borderColor: "rgba(120,194,173,1)",
                         borderWidth: 1,
-                        hoverBackgroundColor: "rgba(255,99,132,0.4)",
-                        hoverBorderColor: "rgba(255,99,132,1)",
+                        hoverBackgroundColor: "rgba(120,194,173,0.4)",
+                        hoverBorderColor: "rgba(120,194,173,1)",
                         data: getScoreValue,
                     }
                 ]
@@ -295,7 +295,7 @@ const ResultPage = ({ history }) => {
             : undefined }
 
             <div>
-                <h3>직업가치관결과</h3>
+                <h3 id="resulth3">직업가치관결과</h3>
             </div>
 
             <div>
