@@ -12,7 +12,7 @@ const TestExPage = ({ history }) => {
             </div>
 
             <div>
-                <div id="per">50%</div>
+                <div id="per">0%</div>
             </div>
 
             <div>
