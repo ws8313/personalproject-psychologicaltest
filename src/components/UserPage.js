@@ -67,8 +67,8 @@ const UserPage = ({ history }) => {
                 <div id="button">
                     { 
                         (name.length === 0) || (gender.length === 0) ?
-                        <button type="submit" class="btn btn-primary disabled" disabled>검사시작</button> :
-                        <button type="submit" class="btn btn-primary" onClick={ () => { history.push("/TestExPage") }}>검사시작</button>
+                        <button id="userbtn" type="submit" class="btn btn-primary disabled" disabled>검사시작</button> :
+                        <button id="userbtn" type="submit" class="btn btn-primary" onClick={ () => { history.push("/TestExPage") }}>검사시작</button>
                     }
                 </div>
             </form>
