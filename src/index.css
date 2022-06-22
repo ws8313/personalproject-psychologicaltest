@@ -20,15 +20,21 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 0 4.2rem;
+  box-sizing: border-box;
+  max-width: 144rem;
+  display: flex;
+}
+
 #inputform {
   border: solid 2px rgb(7, 14, 21);
   border-radius: 50px;
   width: 400px;
   height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: auto;
+  margin: auto;
 }
 
 #h1 {
