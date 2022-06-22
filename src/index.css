@@ -111,12 +111,15 @@ body {
 }
 
 label {
+  /* width: 100%; */
   width: 375px;
   height: 85px;
   border: solid 2px black;
   border-radius: 15px;
   font-size: 15px;
   font-weight: bold;
+
+  box-sizing: border-box;
 
   text-align: center;
   margin-left: 10px;
@@ -170,13 +173,17 @@ label {
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   border-radius: 0.4rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, opacity .15s ease-in-out;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out, filter .15s ease-in-out;
 
 }
 
 #btn:hover, #userbtn:hover {
-  opacity: 0.8;
+  filter: brightness(90%)
   /* transform: scale(1.1); */
+  /* background-color: #fff;
+  border-color: #78c2ad;
+  border: 2px solid #78c2ad;
+  color: #000; */
 }
 
 #userbtn {
