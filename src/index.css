@@ -3,12 +3,12 @@
   padding: 0;
 
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Do Hyeon', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: Montserrat,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family: 'Do Hyeon', sans-serif;
   font-weight: 500;
   line-height: 1.2;
   color: #5a5a5a;
@@ -55,7 +55,7 @@ body {
   border-radius: 25px;
 }
 
-#male, #female {
+#male, #female, #check {
   margin-right: 10px;
 }
 
@@ -98,16 +98,13 @@ body {
 }
 
 #qlist {
-  margin-top: 30px;
-  margin-bottom: 25px;
-  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 25px;
   font-weight: bold;
-  border: black solid 2px;
-  border-radius: 40px;
+  /* border-bottom: black solid 2px; */
+  /* border-radius: 40px; */
   width: 1020px;
-  height: 80px;
-  padding-top: 20px;
-  padding-bottom: 20px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -228,8 +225,8 @@ label {
 }
 
 #qlistp {
-  margin-top: 5px;
-  margin-bottom: 1px;
+  margin-top: 10px;
+  margin-bottom: 8.5px;
 }
 
 #resultq {
