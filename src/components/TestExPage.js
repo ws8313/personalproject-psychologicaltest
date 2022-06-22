@@ -61,7 +61,7 @@ const TestExPage = ({ history }) => {
             <button
               id="btn"
               className="btn btn-primary"
-              onClick={() => history.goBack()}
+              onClick={() => history.push("/")}
             >
               이전
             </button>

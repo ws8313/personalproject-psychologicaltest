@@ -59,8 +59,8 @@ const TestPage = ({ history }) => {
         if(qlist && qlist.length > 0) {
             btnShow.push(
             ((curPage+1)*5) <= ((Object.keys(input).length)-1) || ((Object.keys(input).length)-1) === 28 ?
-                <button id="btn" class="btn btn-primary" onClick={nextClick}>다음</button> :
-                <button id="btn" class="btn btn-primary disabled" onClick={nextClick} disabled>다음</button>
+                <button id="btn" className="btn btn-primary" onClick={nextClick}>다음</button> :
+                <button id="btn" className="btn btn-primary disabled" onClick={nextClick} disabled>다음</button>
             )}
         return btnShow;
     }
@@ -123,9 +123,9 @@ const TestPage = ({ history }) => {
                 for (let curQuestions=0; curQuestions<3; curQuestions++) {
                         print5qlist.push(
                             <div key={qlist[curPage][curQuestions].qitemNo}>
-                                <div id="qlist">
+                                {/* <div id="qlist">
                                     {qlist[curPage][curQuestions].question}
-                                </div>
+                                </div> */}
 
                                 <form>
                                     <label>
@@ -161,9 +161,9 @@ const TestPage = ({ history }) => {
                 if(qlist && qlist.length > 0) {
                     print5qlist.push(
                         <div key={qlist[curPage][curQuestions].qitemNo}>
-                            <div id="qlist">
+                            {/* <div id="qlist">
                                 {qlist[curPage][curQuestions].question}
-                            </div>
+                            </div> */}
 
                             <form>
                                 <label>
@@ -213,17 +213,20 @@ const TestPage = ({ history }) => {
             </div>
 
             <div>
-                <ProgressBar animated now={progress()} />
+                <ProgressBar variant="progress-bar_color" animated now={progress()} />
             </div>
 
 
             <div>
+                <p id="qlist">
+                    두 개 가치 중에 자신에게 더 중요한 가치를 선택하세요.
+                </p>
                 {printqlist()}
             </div>
 
             <div id="btnbox">
                 <div>
-                    <button id="btn" class="btn btn-primary" onClick={prevClick}>이전</button>
+                    <button id="btn" className="btn btn-primary" onClick={prevClick}>이전</button>
                 </div>
                 <div>
                     {btnDisabled()}

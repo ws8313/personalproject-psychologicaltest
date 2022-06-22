@@ -178,8 +178,8 @@ label {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-#btn:hover {
-  opacity: 0.9;
+#btn:hover, #userbtn:hover {
+  opacity: 0.8;
   transition: opacity .15s ease-in-out;
 }
 
