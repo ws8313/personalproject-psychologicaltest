@@ -130,7 +130,7 @@ const TestPage = ({ history }) => {
                                 <form>
                                     <label>
                                         <p id="qlistp">{qlist[curPage][curQuestions].answer03}</p>
-                                        <p id="qlistp">{qlist[curPage][curQuestions].answer01}</p>
+                                        {/* <p id="qlistp">{qlist[curPage][curQuestions].answer01}</p> */}
                                         <input 
                                             type="radio" 
                                             id="check"
@@ -139,11 +139,12 @@ const TestPage = ({ history }) => {
                                             onChange={changeHandler}
                                             checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore01 ? true : false}  
                                         />
+                                        {qlist[curPage][curQuestions].answer01}
                                     </label>
 
                                     <label>
                                         <p id="qlistp">{qlist[curPage][curQuestions].answer04}</p>
-                                        <p id="qlistp">{qlist[curPage][curQuestions].answer02}</p>
+                                        {/* <p id="qlistp">{qlist[curPage][curQuestions].answer02}</p> */}
                                         <input 
                                             type="radio" 
                                             id="check"
@@ -152,6 +153,7 @@ const TestPage = ({ history }) => {
                                             onChange={changeHandler}
                                             checked={localStorage.getItem(qlist[curPage][curQuestions].qitemNo) === qlist[curPage][curQuestions].answerScore02 ? true : false}
                                         />
+                                        {qlist[curPage][curQuestions].answer02}
                                     </label>
                                 </form>
                             </div>
