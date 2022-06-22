@@ -178,6 +178,11 @@ label {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+#btn:hover {
+  opacity: 0.9;
+  transition: opacity .15s ease-in-out;
+}
+
 #userbtn {
   color: #fff;
   background-color: #78c2ad;
@@ -285,7 +290,7 @@ table th {
 }
 
 .progress-bar {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
@@ -293,5 +298,13 @@ table th {
   text-align: center;
   white-space: nowrap;
   background-color: #78c2ad;
-  transition: width .6s ease;
+  transition: width .6s ease; */
+}
+
+.bg-progress-bar_color {
+  background-color: #78c2ad!important;
+}
+
+#answer1, #answer2 {
+  margin-right: 0.35rem;
 }
