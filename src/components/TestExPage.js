@@ -60,6 +60,7 @@ const TestExPage = ({ history }) => {
           <div>
             <button
               id="btn"
+              type="button"
               className="btn btn-primary"
               onClick={() => history.push("/")}
             >
@@ -71,7 +72,7 @@ const TestExPage = ({ history }) => {
             {answer === "1" || answer === "2" ? (
               <button
                 id="btn"
-                type="submit"
+                type="button"
                 className="btn btn-primary"
                 onClick={(event) => {
                   history.push("/TestPage/0");
@@ -82,7 +83,7 @@ const TestExPage = ({ history }) => {
             ) : (
               <button
                 id="btn"
-                type="submit"
+                type="button"
                 className="btn btn-primary disabled"
                 disabled
               >

@@ -12,7 +12,6 @@ const UserPage = ({ history }) => {
   useEffect(() => {
     context.name = name;
     context.gender = gender;
-    console.log(context);
   }, [name, gender]);
 
   return (
@@ -33,7 +32,6 @@ const UserPage = ({ history }) => {
               value={name}
               onChange={(event) => {
                 setName(event.target.value);
-                console.log(name);
               }}
             />
             <p id="p">성별</p>
