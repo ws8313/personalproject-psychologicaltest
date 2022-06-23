@@ -61,7 +61,7 @@ const TestExPage = ({ history }) => {
             <button
               id="btn"
               type="button"
-              className="btn btn-primary"
+              className="btn btn-primary shadow-none"
               onClick={() => history.push("/")}
             >
               이전
@@ -73,7 +73,7 @@ const TestExPage = ({ history }) => {
               <button
                 id="btn"
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-primary shadow-none"
                 onClick={(event) => {
                   history.push("/TestPage/0");
                 }}
