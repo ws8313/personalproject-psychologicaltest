@@ -84,10 +84,8 @@ const TestPage = ({ history }) => {
 
   // qlist에 5문항씩 받아오기 및 배열 안에 객체 콘솔 출력에 TypeError: Cannot read property ‘0’ of undefined 에러 해결
   const qlist = [];
-  for (let i = 0; i < questions.length; i += 5)
+  for (let i = 0; i < questions.length; i += 5) {
     qlist.push(questions.slice(i, i + 5));
-  if (qlist && qlist.length > 0) {
-    console.log(qlist);
   }
 
   // 검사 문항 체크시 값 변경 함수
@@ -112,17 +110,6 @@ const TestPage = ({ history }) => {
     const ansListResult = ansList.join(" ");
     context.answers = ansListResult;
   }, [input]);
-
-  // checked 버튼 disable 구현 중 확인 필요
-  if (qlist && qlist.length > 0) {
-    console.log((curPage + 1) * 5);
-    console.log(Object.keys(input).length - 1);
-  }
-
-  // questions 질문지 받아오기 콘솔 출력
-  if (questions && questions.length > 0) {
-    console.log(questions);
-  }
 
   function progress() {
     const getProgress = Math.round((localStorage.length * 100) / 28);

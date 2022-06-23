@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 
-// 11.21 context 만들기
+// context 만들기
 export const UserContext = createContext();
 
 const UserStore = (props) => {

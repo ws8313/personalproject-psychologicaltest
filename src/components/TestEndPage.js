@@ -21,7 +21,7 @@ const TestEndPage = ({ history }) => {
         <div id="btnbox">
           <button
             id="btn"
-            class="btn btn-primary"
+            className="btn btn-primary"
             onClick={() => {
               history.push("/ResultPage");
             }}

@@ -23,8 +23,6 @@ const ResultPage = ({ history }) => {
         .then((res) => {
           setData(res.data.RESULT);
           seq = res.data.RESULT["url"].split("seq=")[1];
-          console.log("POST 요청 확인");
-          console.log(seq);
           return seq;
         })
         .catch(() => {
@@ -38,23 +36,18 @@ const ResultPage = ({ history }) => {
           setResultData(res.data);
           const wonScore = res.data.result.wonScore.split(" ");
           wonScore.pop(1);
-          console.log(wonScore);
           const scorevalue = [];
           let sortvalue = [];
           for (let i = 0; i < wonScore.length; i++) {
             scorevalue.push(wonScore[i].split("=")[1]);
           }
           setGetScoreValue(scorevalue);
-          console.log(scorevalue);
           sortvalue = wonScore.sort(function(a, b) {
             return a[2] - b[2];
           });
-          console.log(sortvalue);
 
-          // 배열[-1] 자바스크립트에선 x
           no1 = sortvalue[sortvalue.length - 1][0];
           no2 = sortvalue[sortvalue.length - 2][0];
-          console.log(no1, no2);
         })
         .catch((err) => {
           console.log(err);
@@ -65,7 +58,6 @@ const ResultPage = ({ history }) => {
         )
         .then((res) => {
           setJobData(res.data);
-          console.log("직종 get 완료", res);
         })
         .catch((err) => {
           console.log(err);
@@ -76,7 +68,6 @@ const ResultPage = ({ history }) => {
         )
         .then((res) => {
           setMajorData(res.data);
-          console.log("학과 get 완료", res);
         })
         .catch((err) => {
           console.log(err);
@@ -85,14 +76,14 @@ const ResultPage = ({ history }) => {
     result();
   }, []);
 
-  useEffect(() => {
-    console.log(data);
-    console.log(context);
-    console.log(resultData);
-    console.log(jobData);
-    console.log(majorData);
-    console.log(getScoreValue);
-  }, [data, context, resultData, jobData, majorData, getScoreValue]);
+  useEffect(() => {}, [
+    data,
+    context,
+    resultData,
+    jobData,
+    majorData,
+    getScoreValue,
+  ]);
 
   function getJobData() {
     let high = [];
@@ -127,22 +118,24 @@ const ResultPage = ({ history }) => {
               <th>직업</th>
             </tr>
           </thead>
-          <tr>
-            <td>고졸</td>
-            <td>{high}</td>
-          </tr>
-          <tr>
-            <td>전문대졸</td>
-            <td>{college}</td>
-          </tr>
-          <tr>
-            <td>대졸</td>
-            <td>{univ}</td>
-          </tr>
-          <tr>
-            <td>대학원졸</td>
-            <td>{grad}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>고졸</td>
+              <td>{high}</td>
+            </tr>
+            <tr>
+              <td>전문대졸</td>
+              <td>{college}</td>
+            </tr>
+            <tr>
+              <td>대졸</td>
+              <td>{univ}</td>
+            </tr>
+            <tr>
+              <td>대학원졸</td>
+              <td>{grad}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     );
@@ -197,38 +190,40 @@ const ResultPage = ({ history }) => {
               <th>직업</th>
             </tr>
           </thead>
-          <tr>
-            <td>계열무관</td>
-            <td>{major1}</td>
-          </tr>
-          <tr>
-            <td>인문</td>
-            <td>{major2}</td>
-          </tr>
-          <tr>
-            <td>사회</td>
-            <td>{major3}</td>
-          </tr>
-          <tr>
-            <td>교육</td>
-            <td>{major4}</td>
-          </tr>
-          <tr>
-            <td>공학</td>
-            <td>{major5}</td>
-          </tr>
-          <tr>
-            <td>자연</td>
-            <td>{major6}</td>
-          </tr>
-          <tr>
-            <td>의학</td>
-            <td>{major7}</td>
-          </tr>
-          <tr>
-            <td>예체능</td>
-            <td>{major8}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>계열무관</td>
+              <td>{major1}</td>
+            </tr>
+            <tr>
+              <td>인문</td>
+              <td>{major2}</td>
+            </tr>
+            <tr>
+              <td>사회</td>
+              <td>{major3}</td>
+            </tr>
+            <tr>
+              <td>교육</td>
+              <td>{major4}</td>
+            </tr>
+            <tr>
+              <td>공학</td>
+              <td>{major5}</td>
+            </tr>
+            <tr>
+              <td>자연</td>
+              <td>{major6}</td>
+            </tr>
+            <tr>
+              <td>의학</td>
+              <td>{major7}</td>
+            </tr>
+            <tr>
+              <td>예체능</td>
+              <td>{major8}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     );
@@ -237,7 +232,6 @@ const ResultPage = ({ history }) => {
   let barChart;
   useEffect(() => {
     let ctx = document.getElementById("barChart").getContext("2d");
-    console.log(getScoreValue);
     barChart = new Chart(ctx, {
       type: "bar",
       data: {
@@ -330,7 +324,7 @@ const ResultPage = ({ history }) => {
       <div id="btnbox">
         <button
           id="resultbtn"
-          class="btn btn-primary"
+          className="btn btn-primary"
           onClick={() => {
             history.push("/");
           }}
