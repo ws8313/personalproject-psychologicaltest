@@ -106,7 +106,7 @@ body {
   margin-right: auto;
 } */
 
-#q, #qlist {
+#q, #qlist, #testendq {
   margin-top: 25px;
   margin-bottom: 25px;
   font-size: 25px;
@@ -304,4 +304,34 @@ table th {
 
 #answer1, #answer2 {
   margin-right: 0.35rem;
+}
+
+@media (max-width: 767px) {
+  #inputform {
+    width: 100%;
+    border: none;
+  }
+
+  #q {
+    font-size: 13px;
+  }
+
+  #qlist {
+    font-size: 17px;
+  }
+
+  #testendq {
+    font-size: 19px;
+  }
+
+  #resultq {
+    font-size: 12px;
+  }
+
+  label {
+    width: 100%;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

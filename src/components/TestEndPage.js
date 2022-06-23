@@ -9,7 +9,7 @@ const TestEndPage = ({ history }) => {
         </div>
 
         <div>
-          <div id="q">
+          <div id="testendq">
             검사결과는 여러분이 직업을 선택할 때 상대적으로 어떠한 가치를
             중요하게 생각하는지를 알려주고,
             <br />
