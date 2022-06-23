@@ -25,6 +25,7 @@ body {
   box-sizing: border-box;
   max-width: 144rem;
   display: flex;
+  flex-direction: column;
 }
 
 #inputform {
@@ -81,7 +82,7 @@ body {
   margin-bottom: 5px;
 }
 
-#q {
+/* #q {
   margin-top: 30px;
   margin-bottom: 10px;
   font-size: 20px;
@@ -95,9 +96,9 @@ body {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
-#qlist {
+#q, #qlist {
   margin-top: 25px;
   margin-bottom: 25px;
   font-size: 25px;
@@ -130,18 +131,8 @@ label {
 }
 
 #exlabel {
-  width: 130px;
-  height: 40px;
-  border: solid 2px black;
-  border-radius: 20px;
-  font-size: 17px;
-  font-weight: bold;
-
-  text-align: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  font-size: 20px;
+  padding-top: 25px;
 }
 
 #btnbox {

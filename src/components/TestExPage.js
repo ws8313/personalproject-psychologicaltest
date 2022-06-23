@@ -5,7 +5,7 @@ const TestExPage = ({ history }) => {
   const [answer, setAnswer] = useState("");
 
   return (
-    <div>
+    <div className="container">
       <div>
         <h1 id="h1">검사예시</h1>
       </div>
