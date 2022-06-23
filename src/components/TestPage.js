@@ -58,7 +58,11 @@ const TestPage = ({ history }) => {
       btnShow.push(
         (curPage + 1) * 5 <= Object.keys(input).length - 1 ||
           Object.keys(input).length - 1 === 28 ? (
-          <button id="btn" className="btn btn-primary shadow-none" onClick={nextClick}>
+          <button
+            id="btn"
+            className="btn btn-primary shadow-none"
+            onClick={nextClick}
+          >
             다음
           </button>
         ) : (
@@ -258,7 +262,11 @@ const TestPage = ({ history }) => {
 
       <div id="btnbox">
         <div>
-          <button id="btn" className="btn btn-primary shadow-none" onClick={prevClick}>
+          <button
+            id="btn"
+            className="btn btn-primary shadow-none"
+            onClick={prevClick}
+          >
             이전
           </button>
         </div>

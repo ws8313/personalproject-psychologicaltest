@@ -35,7 +35,7 @@ const UserPage = ({ history }) => {
               }}
             />
             <p id="p">성별</p>
-            <label id="userlabel" for="male">
+            <label id="userlabel" htmlFor="male">
               <input
                 type="radio"
                 id="male"
@@ -47,7 +47,7 @@ const UserPage = ({ history }) => {
               />
               남자
             </label>
-            <label id="userlabel" for="female">
+            <label id="userlabel" htmlFor="female">
               <input
                 type="radio"
                 id="female"

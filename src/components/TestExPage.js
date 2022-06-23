@@ -30,7 +30,7 @@ const TestExPage = ({ history }) => {
 
       <form>
         <div>
-          <label id="exlabel" for="answer1">
+          <label id="exlabel" htmlFor="answer1">
             <input
               type="radio"
               id="answer1"
@@ -43,7 +43,7 @@ const TestExPage = ({ history }) => {
             능력발휘
           </label>
 
-          <label id="exlabel" for="answer2">
+          <label id="exlabel" htmlFor="answer2">
             <input
               type="radio"
               id="answer2"
