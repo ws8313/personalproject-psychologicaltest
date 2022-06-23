@@ -60,6 +60,7 @@ const TestPage = ({ history }) => {
           Object.keys(input).length - 1 === 28 ? (
           <button
             id="btn"
+            key="nextBtn"
             className="btn btn-primary shadow-none"
             onClick={nextClick}
           >
@@ -68,6 +69,7 @@ const TestPage = ({ history }) => {
         ) : (
           <button
             id="btn"
+            key="nextBtn_disabled"
             className="btn btn-primary disabled"
             onClick={nextClick}
             disabled

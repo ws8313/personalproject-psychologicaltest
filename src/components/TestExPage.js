@@ -28,7 +28,7 @@ const TestExPage = ({ history }) => {
         가치의 뜻을 잘모르겠다면 문항 아래에 있는 가치의 설명을 확인해보세요.
       </div>
 
-      <form>
+      <div>
         <div>
           <label id="exlabel" htmlFor="answer1">
             <input
@@ -72,7 +72,7 @@ const TestExPage = ({ history }) => {
             {answer === "1" || answer === "2" ? (
               <button
                 id="btn"
-                type="submit"
+                type="button"
                 className="btn btn-primary shadow-none"
                 onClick={(event) => {
                   history.push("/TestPage/0");
@@ -83,7 +83,7 @@ const TestExPage = ({ history }) => {
             ) : (
               <button
                 id="btn"
-                type="submit"
+                type="button"
                 className="btn btn-primary disabled"
                 disabled
               >
@@ -92,7 +92,7 @@ const TestExPage = ({ history }) => {
             )}
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
