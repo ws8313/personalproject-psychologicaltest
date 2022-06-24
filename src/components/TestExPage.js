@@ -28,9 +28,9 @@ const TestExPage = ({ history }) => {
         가치의 뜻을 잘모르겠다면 문항 아래에 있는 가치의 설명을 확인해보세요.
       </div>
 
-      <div>
-        <div>
-          <label id="exlabel" htmlFor="answer1">
+      <div className="excontainer">
+        <div className="labelcontainer">
+          <label className="toplabel" id="exlabel" htmlFor="answer1">
             <input
               type="radio"
               id="answer1"
@@ -43,7 +43,7 @@ const TestExPage = ({ history }) => {
             능력발휘
           </label>
 
-          <label id="exlabel" htmlFor="answer2">
+          <label className="bottomlabel" id="exlabel" htmlFor="answer2">
             <input
               type="radio"
               id="answer2"
