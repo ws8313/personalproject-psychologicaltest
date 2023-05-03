@@ -69,10 +69,10 @@ npm start
 ## 개발환경
 
 - React
-- axios
+- Axios
 - react-router-dom
-- bootstrap
-- chart.js
+- Bootstrap
+- Chart.js
 
 ## 수상
 
